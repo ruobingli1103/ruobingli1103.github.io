@@ -9,11 +9,20 @@
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 40px; /* 增加了页边距 */
+    padding: 40px;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto; /* 居中容器 */
+  }
+  h2 {
+    margin: 0;
+    color: #333;
+    padding-bottom: 20px; /* 加点间距 */
   }
   table {
-    width: 80%; /* 减小了表格宽度 */
-    margin: 20px auto; /* 表格上下保持20px间距，左右自动居中 */
+    width: 100%; /* 表格宽度设置为100%相对于其父容器 */
+    margin-top: 20px;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -33,16 +42,43 @@
     width: 100%;
     max-width: 250px;
   }
-  h2 {
-    color: #333;
-  }
 </style>
 </head>
 <body>
 
-<h2>Audio Samples</h2>
+<div class="container">
+  <h2>Synthesized audios:</h2>
 
-<table>
+  <table>
+    <tr>
+      <th></th>
+      <th>Amused</th>
+      <th>Angry</th>
+      <th>Neutral</th>
+      <th>Disgusted</th>
+      <th>Sleepy</th>
+    </tr>
+    <tr>
+      <td>Speaker00 [Male]</td>
+      <td><audio controls src="202405_audio/amused_01.wav"></audio></td>
+      <td><audio controls src="202405_audio/angry_01.wav"></audio></td>
+      <td><audio controls src="202405_audio/neutral_01.wav"></audio></td>
+      <td><audio controls src="202405_audio/disgusted_01.wav"></audio></td>
+      <td><audio controls src="202405_audio/sleepy_01.wav"></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker01 [Female]</td>
+      <td><audio controls src="202405_audio/amused_02.wav"></audio></td>
+      <td><audio controls src="202405_audio/angry_02.wav"></audio></td>
+      <td><audio controls src="202405_audio/neutral_02.wav"></audio></td>
+      <td><audio controls src="202405_audio/disgusted_02.wav"></audio></td>
+      <td><audio controls src="202405_audio/sleepy_02.wav"></audio></td>
+    </tr>
+  </table>
+
+<h2>Audio samples from training dataset:</h2>
+
+ <table>
   <tr>
     <th></th>
     <th>Amused</th>
@@ -53,21 +89,23 @@
   </tr>
   <tr>
     <td>Speaker00 [Male]</td>
-    <td><audio controls src="202405_audio/amused_01.wav"></audio></td>
-    <td><audio controls src="202405_audio/angry_01.wav"></audio></td>
-    <td><audio controls src="202405_audio/neutral_01.wav"></audio></td>
-    <td><audio controls src="202405_audio/disgusted_01.wav"></audio></td>
-    <td><audio controls src="202405_audio/sleepy_01.wav"></audio></td>
+    <td><audio controls src="202405_audio/amused_85-112_0107.wav"></audio></td>
+    <td><audio controls src="202405_audio/anger_113-140_0122.wav"></audio></td>
+    <td><audio controls src="202405_audio/neutral_141-168_0146.wav"></audio></td>
+    <td><audio controls src="202405_audio/Disgust_141-168_0150.wav"></audio></td>
+    <td><audio controls src="202405_audio/sleepiness_113-140_0120.wav"></audio></td>
   </tr>
   <tr>
     <td>Speaker01 [Female]</td>
-    <td><audio controls src="202405_audio/amused_02.wav"></audio></td>
-    <td><audio controls src="202405_audio/angry_02.wav"></audio></td>
-    <td><audio controls src="202405_audio/neutral_02.wav"></audio></td>
-    <td><audio controls src="202405_audio/disgusted_02.wav"></audio></td>
-    <td><audio controls src="202405_audio/sleepy_02.wav"></audio></td>
+    <td><audio controls src="202405_audio/amused_1-15_0001.wav"></audio></td>
+    <td><audio controls src="202405_audio/anger_1-28_0002.wav"></audio></td>
+    <td><audio controls src="202405_audio/Neutral_1-28_0006.wav"></audio></td>
+    <td><audio controls src="202405_audio/disgust_1-28_0003.wav"></audio></td>
+    <td><audio controls src="202405_audio/sleepiness_1-28_0005.wav"></audio></td>
   </tr>
 </table>
-
+  
+</div>
+  
 </body>
 </html>
