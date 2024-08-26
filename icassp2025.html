@@ -66,11 +66,42 @@
 <body>
 
 <div class="header">
-  <button onclick="window.location.href='index.html'">Back to Main Page</button>
+  <button style="background-color: transparent; border: none; color: #fff; padding: 10px 20px; cursor: pointer; font-size: 16px;" 
+          onclick="window.location.href='index.html'">Back to Main Page</button>
 </div>
 
+
 <div class="container">
-  <h2>Audio Samples</h2>
+  <h2>Ground Truth</h2>
+  <table>
+    <tr>
+      <th></th>
+      <th>Amused</th>
+      <th>Angry</th>
+      <th>Neutral</th>
+      <th>Disgusted</th>
+      <th>Sleepy</th>
+   </tr>
+    <tr>
+      <td>Speaker 00 [Male]</td>
+      <td><audio controls src="audio/ICASSP2025/real_male_amused.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_male_angry.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_male_neutral.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_male_disgust.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_male_sleepiness.wav"></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker 01 [Female]</td>
+      <td><audio controls src="audio/ICASSP2025/real_female_amused.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_female_angry.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_female_Neutral.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/real_female_disgust.wav"></audio></td>
+      <td><audio controls src="2audio/ICASSP2025/real_female_sleepiness.wav"></audio></td>
+    </tr>
+  </table>
+
+  <h2 style="margin-top: 60px;">Generated Audio</h2>
+
   <table>
     <tr>
       <th></th>
@@ -82,21 +113,22 @@
     </tr>
     <tr>
       <td>Speaker 00 [Male]</td>
-      <td><audio controls src="202406_audio/male_amused.wav"></audio></td>
-      <td><audio controls src="202406_audio/male_angry.wav"></audio></td>
-      <td><audio controls src="202406_audio/male_neutral.wav"></audio></td>
-      <td><audio controls src="202406_audio/male_disgust.wav"></audio></td>
-      <td><audio controls src="202406_audio/male_sleepiness.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_amused_477-504_0479.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_anger_477-504_0479.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_neutral_477-504_0479.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_disgust_477-504_0479.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_sleepiness_477-504_0479.wav"></audio></td>
     </tr>
     <tr>
       <td>Speaker 01 [Female]</td>
-      <td><audio controls src="202406_audio/female_amused.wav"></audio></td>
-      <td><audio controls src="202406_audio/female_angry.wav"></audio></td>
-      <td><audio controls src="202406_audio/female_neutral.wav"></audio></td>
-      <td><audio controls src="202406_audio/female_disgust.wav"></audio></td>
-      <td><audio controls src="202406_audio/female_sleepiness.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_amused_1-15_0001.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_anger_1-28_0001.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_Neutral_1-28_0001.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_disgust_1-28_0001.wav"></audio></td>
+      <td><audio controls src="audio/ICASSP2025/generated_sleepiness_1-28_0001.wav"></audio></td>
     </tr>
   </table>
+
 </div>
 
 </body>
