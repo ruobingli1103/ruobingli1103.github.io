@@ -16,24 +16,27 @@
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
-    position: relative;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .dropdown {
     display: inline-block;
     position: relative;
+    margin-right: 20px;
   }
   .dropdown button {
-    background-color: #444;
+    background-color: transparent;
     color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 5px;
   }
   .dropdown button:hover {
-    background-color: #555;
+    background-color: rgba(255, 255, 255, 0.1);
   }
   .dropdown-content {
     display: none;
@@ -56,6 +59,19 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .header button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+  .header button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   .welcome-message {
     text-align: center;
     margin-top: 20%;
@@ -63,20 +79,46 @@
     color: #333;
   }
 </style>
+<script>
+  function setLanguage(language) {
+    const demoButton = document.getElementById('demoButton');
+    const publicationsButton = document.getElementById('publicationsButton');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const thesisLink = document.getElementById('thesisLink');
+    const icasspLink = document.getElementById('icasspLink');
+
+    if (language === 'en') {
+      demoButton.textContent = 'Demo';
+      publicationsButton.textContent = 'Publications';
+      welcomeMessage.textContent = 'Welcome';
+      thesisLink.textContent = 'Undergraduate Thesis';
+      icasspLink.textContent = 'ICASSP2025';
+    } else if (language === 'zh') {
+      demoButton.textContent = '音频样本';
+      publicationsButton.textContent = '发表成果';
+      welcomeMessage.textContent = '欢迎';
+      thesisLink.textContent = '本科毕业设计';
+      icasspLink.textContent = 'ICASSP会议2025';
+    }
+  }
+</script>
 </head>
-<body>
+<body onload="setLanguage('en')">
 
 <div class="header">
   <div class="dropdown">
-    <button>Demo</button>
+    <button id="demoButton">Demo</button>
     <div class="dropdown-content">
-      <a href="thesis.html">Undergraduate Thesis</a>
-      <a href="icassp2025.html">ICASSP2025</a>
+      <a href="thesis.html" id="thesisLink">Undergraduate Thesis</a>
+      <a href="icassp2025.html" id="icasspLink">ICASSP2025</a>
     </div>
   </div>
+  <button id="publicationsButton">Publications</button>
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('zh')">中文</button>
 </div>
 
-<div class="welcome-message">
+<div class="welcome-message" id="welcomeMessage">
   Welcome
 </div>
 
