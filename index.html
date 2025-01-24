@@ -1,125 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Homepage</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  .header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .dropdown {
-    display: inline-block;
-    position: relative;
-    margin-right: 20px;
-  }
-  .dropdown button {
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-  .dropdown button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
-  }
-  .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  .dropdown-content a:hover {
-    background-color: #555;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .header button {
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 20px;
-    border-radius: 5px;
-  }
-  .header button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .welcome-message {
-    text-align: center;
-    margin-top: 20%;
-    font-size: 48px;
-    color: #333;
-  }
-</style>
-<script>
-  function setLanguage(language) {
-    const demoButton = document.getElementById('demoButton');
-    const publicationsButton = document.getElementById('publicationsButton');
-    const welcomeMessage = document.getElementById('welcomeMessage');
-    const thesisLink = document.getElementById('thesisLink');
-    const icasspLink = document.getElementById('icasspLink');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Homepage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+      .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+      .dropdown {
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+      .dropdown button {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+      .dropdown button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+      .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+      .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+      .dropdown-content a:hover {
+            background-color: #555;
+        }
+      .dropdown:hover.dropdown-content {
+            display: block;
+        }
+      .header button {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+      .header button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+      .welcome-message {
+            text-align: center;
+            margin-top: 20%;
+            font-size: 48px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function setLanguage(language) {
+            const demoButton = document.getElementById('demoButton');
+            const publicationsButton = document.getElementById('publicationsButton');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const thesisLink = document.getElementById('thesisLink');
+            const icasspLink = document.getElementById('icasspLink');
+            const evaluationLink = document.getElementById('evaluationLink');
 
-    if (language === 'en') {
-      demoButton.textContent = 'Demo';
-      publicationsButton.textContent = 'Publications';
-      welcomeMessage.textContent = 'Welcome';
-      thesisLink.textContent = 'Undergraduate Thesis';
-      icasspLink.textContent = 'ICASSP2025';
-    } else if (language === 'zh') {
-      demoButton.textContent = '音频样本';
-      publicationsButton.textContent = '发表成果';
-      welcomeMessage.textContent = '欢迎';
-      thesisLink.textContent = '本科毕业设计';
-      icasspLink.textContent = 'ICASSP会议2025';
-    }
-  }
-</script>
+            if (language === 'en') {
+                demoButton.textContent = 'Demo';
+                publicationsButton.textContent = 'Publications';
+                welcomeMessage.textContent = 'Welcome';
+                thesisLink.textContent = 'Undergraduate Thesis';
+                icasspLink.textContent = 'ICASSP2025';
+                evaluationLink.textContent = 'Evaluation';
+            } else if (language === 'zh') {
+                demoButton.textContent = '音频样本';
+                publicationsButton.textContent = '发表成果';
+                welcomeMessage.textContent = '欢迎';
+                thesisLink.textContent = '本科毕业设计';
+                icasspLink.textContent = 'ICASSP会议2025';
+                evaluationLink.textContent = '评估';
+            }
+        }
+    </script>
 </head>
 <body onload="setLanguage('en')">
 
 <div class="header">
-  <div class="dropdown">
-    <button id="demoButton">Demo</button>
-    <div class="dropdown-content">
-      <a href="thesis.html" id="thesisLink">Undergraduate Thesis</a>
-      <a href="icassp2025.html" id="icasspLink">ICASSP2025</a>
+    <div class="dropdown">
+        <button id="demoButton">Demo</button>
+        <div class="dropdown-content">
+            <a href="thesis.html" id="thesisLink">Undergraduate Thesis</a>
+            <a href="icassp2025.html" id="icasspLink">ICASSP2025</a>
+            <a href="evaluation.html" id="evaluationLink">Evaluation</a>
+        </div>
     </div>
-  </div>
-  <button id="publicationsButton">Publications</button>
-  <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('zh')">中文</button>
+    <button id="publicationsButton">Publications</button>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('zh')">中文</button>
 </div>
 
 <div class="welcome-message" id="welcomeMessage">
-  Welcome
+    Welcome
 </div>
 
 </body>
