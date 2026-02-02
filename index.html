@@ -1,130 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Homepage</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-      .header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: right;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-      .dropdown {
-            display: inline-block;
-            position: relative;
-            margin-right: 20px;
-        }
-      .dropdown button {
-            background-color: transparent;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            border-radius: 5px;
-        }
-      .dropdown button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-      .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #444;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-      .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-      .dropdown-content a:hover {
-            background-color: #555;
-        }
-      .dropdown:hover.dropdown-content {
-            display: block;
-        }
-      .header button {
-            background-color: transparent;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 20px;
-            border-radius: 5px;
-        }
-      .header button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-      .welcome-message {
-            text-align: center;
-            margin-top: 20%;
-            font-size: 48px;
-            color: #333;
-        }
-    </style>
-    <script>
-        function setLanguage(language) {
-            const demoButton = document.getElementById('demoButton');
-            const publicationsButton = document.getElementById('publicationsButton');
-            const welcomeMessage = document.getElementById('welcomeMessage');
-            const thesisLink = document.getElementById('thesisLink');
-            const icasspLink = document.getElementById('icasspLink');
-            const evaluationLink = document.getElementById('evaluationLink');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Academic Homepage</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Georgia", serif;
+      line-height: 1.8;
+      color: #333;
+      background: #fafafa;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-            if (language === 'en') {
-                demoButton.textContent = 'Demo';
-                publicationsButton.textContent = 'Publications';
-                welcomeMessage.textContent = 'Welcome';
-                thesisLink.textContent = 'Undergraduate Thesis';
-                icasspLink.textContent = 'ICASSP2025';
-                evaluationLink.textContent = 'Evaluation';
-            } else if (language === 'zh') {
-                demoButton.textContent = '音频样本';
-                publicationsButton.textContent = '发表成果';
-                welcomeMessage.textContent = '欢迎';
-                thesisLink.textContent = '本科毕业设计';
-                icasspLink.textContent = 'ICASSP会议2025';
-                evaluationLink.textContent = '评估';
-            }
-        }
-    </script>
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    header p { opacity: 0.9; font-size: 1.1rem; }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    section { margin-bottom: 50px; }
+    h2 {
+      font-size: 1.6rem;
+      color: #1e3a5f;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    /* About */
+    .about-content {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .about-text { flex: 1; }
+    .about-photo {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Publications */
+    .paper {
+      display: flex;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .paper-img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .paper-info h3 {
+      font-size: 1.1rem;
+      color: #1e3a5f;
+      margin-bottom: 8px;
+    }
+    .paper-info .authors {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .paper-info .venue {
+      font-size: 0.85rem;
+      color: #2563eb;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .paper-info .abstract {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .paper-links a {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #e8f0fe;
+      color: #2563eb;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+    }
+
+    /* Awards */
+    .award-list {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .award-item {
+      display: flex;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-year {
+      width: 80px;
+      font-weight: 700;
+      color: #2563eb;
+      flex-shrink: 0;
+    }
+    .award-title { flex: 1; }
+
+    /* Links */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+    .link-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .link-card span {
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1e3a5f;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .about-content { flex-direction: column; }
+      .paper { flex-direction: column; }
+      .paper-img { width: 100%; height: auto; }
+    }
+  </style>
 </head>
-<body onload="setLanguage('en')">
+<body>
 
-<div class="header">
-    <div class="dropdown">
-        <button id="demoButton">Demo</button>
-        <div class="dropdown-content">
-            <a href="thesis.html" id="thesisLink">Undergraduate Thesis</a>
-            <a href="icassp2025.html" id="icasspLink">ICASSP2025</a>
-            <a href="evaluation.html" id="evaluationLink">Evaluation</a>
+  <!-- Header -->
+  <header>
+    <img class="avatar" src="https://github.com/YOUR_USERNAME.png" alt="Photo">
+    <h1>Your Name</h1>
+    <p>Ph.D. Student / Researcher @ Your University</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+    <a href="#links">Links</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I am a Ph.D. student at <strong>Your University</strong>, advised by <a href="#">Prof. Advisor Name</a>. My research interests include <strong>Area 1</strong>, <strong>Area 2</strong>, and <strong>Area 3</strong>.</p>
+          <br>
+          <p>Previously, I received my B.S. degree from XXX University in 2020. I have published papers in top venues such as NeurIPS, CVPR, and Nature Communications.</p>
         </div>
-    </div>
-    <button id="publicationsButton">Publications</button>
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('zh')">中文</button>
-</div>
+        <img class="about-photo" src="images/photo.jpg" alt="Photo">
+      </div>
+    </section>
 
-<div class="welcome-message" id="welcomeMessage">
-    Welcome
-</div>
+    <!-- Publications Section -->
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <!-- Paper 1 -->
+      <div class="paper">
+        <img class="paper-img" src="images/paper1.png" alt="Paper 1">
+        <div class="paper-info">
+          <h3>Your Paper Title Here: A Novel Approach to Something Important</h3>
+          <p class="authors"><strong>Your Name</strong>, Co-author One, Co-author Two, Advisor Name</p>
+          <p class="venue">Nature Communications, 2024</p>
+          <p class="abstract">This paper proposes a novel method for... We demonstrate that our approach achieves state-of-the-art performance on multiple benchmarks, outperforming previous methods by 15%.</p>
+          <div class="paper-links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+            <a href="#">DOI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="paper">
+        <img class="paper-img" src="images/paper2.png" alt="Paper 2">
+        <div class="paper-info">
+          <h3>Another Great Paper Title: Exploring New Frontiers</h3>
+          <p class="authors">Co-author One, <strong>Your Name</strong>, Co-author Two</p>
+          <p class="venue">CVPR 2023 (Oral)</p>
+          <p class="abstract">We present a comprehensive study on... Our experiments show significant improvements in both efficiency and accuracy across diverse datasets.</p>
+          <div class="paper-links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+            <a href="#">Video</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 3 -->
+      <div class="paper">
+        <img class="paper-img" src="images/paper3.png" alt="Paper 3">
+        <div class="paper-info">
+          <h3>Third Paper Title: Advancing the State of the Art</h3>
+          <p class="authors"><strong>Your Name</strong>, Co-author One</p>
+          <p class="venue">NeurIPS 2022</p>
+          <p class="abstract">In this work, we introduce a new framework that... The proposed method reduces computational cost by 40% while maintaining competitive performance.</p>
+          <div class="paper-links">
+            <a href="#">PDF</a>
+            <a href="#">Poster</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+      <h2>Honors & Awards</h2>
+      <div class="award-list">
+        <div class="award-item">
+          <span class="award-year">2024</span>
+          <span class="award-title">Outstanding Research Award, Your University</span>
+        </div>
+        <div class="award-item">
+          <span class="award-year">2023</span>
+          <span class="award-title">Best Paper Award, CVPR 2023</span>
+        </div>
+        <div class="award-item">
+          <span class="award-year">2023</span>
+          <span class="award-title">National Scholarship for Graduate Students</span>
+        </div>
+        <div class="award-item">
+          <span class="award-year">2022</span>
+          <span class="award-title">First Prize, National AI Competition</span>
+        </div>
+        <div class="award-item">
+          <span class="award-year">2020</span>
+          <span class="award-title">Outstanding Graduate, XXX University</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Section -->
+    <section id="links">
+      <h2>Links</h2>
+      <div class="link-grid">
+        <a class="link-card" href="mailto:your.email@university.edu">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#ea4335"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>Email</span>
+        </a>
+        <a class="link-card" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#4285f4"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+          <span>Google Scholar</span>
+        </a>
+        <a class="link-card" href="https://www.researchgate.net/profile/Your-Name" target="_blank">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#00d0af"><path d="M19.586 0c-2.123 0-3.89 1.632-3.89 3.89 0 .378.056.742.147 1.093L12 7.762 8.157 4.983a3.89 3.89 0 1 0-4.27 6.5L12 17.5l8.113-6.017a3.89 3.89 0 0 0 3.473-3.593c0-2.258-1.767-3.89-3.89-3.89h-.11zM12 24l-6-4.5v-6L12 18l6-4.5v6z"/></svg>
+          <span>ResearchGate</span>
+        </a>
+        <a class="link-card" href="https://github.com/YOUR_USERNAME" target="_blank">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#333"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Your Name. Last updated: Feb 2024.</p>
+  </footer>
 
 </body>
 </html>
