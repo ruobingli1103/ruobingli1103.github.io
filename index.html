@@ -123,7 +123,7 @@
       border-radius: 10px;
       margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--accent-color);  /* 左边蓝色标记 */
+      border-left: 4px solid var(--accent-color);
     }
 
     .paper-img {
@@ -264,8 +264,20 @@
       text-decoration: none;
     }
 
+    /* 纯文本卡片（不可点击） */
+    .link-card-static {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
     .link-icon { width: 40px; height: 40px; }
-    .link-card span { font-weight: 600; color: var(--primary-dark); }
+    .link-card span, .link-card-static span { font-weight: 600; color: var(--primary-dark); }
+    .link-card-static .email-text { font-weight: 400; color: var(--text-medium); font-size: 0.9rem; }
 
     /* ============================
        📍 FOOTER
@@ -286,6 +298,7 @@
       .paper-featured { flex-direction: column; }
       .paper-img { width: 100%; height: auto; }
       nav a { margin: 0 8px; font-size: 0.9rem; }
+      .link-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -324,7 +337,7 @@
           <p>
             My research interests focus on <strong>Affective Computing</strong> and 
             <strong>Speech Processing</strong>, particularly in speech emotion recognition 
-            and emotional speech synthesis.
+            and emotion-aware text-to-speech synthesis.
           </p>
           <br>
           <p>
@@ -367,15 +380,12 @@
         </div>
       </div>
 
-
-      <!-- 论文 2: VIB-TTS -->
+      <!-- 论文 2: VIB-TTS（无链接） -->
       <div class="paper-featured">
         <img class="paper-img" src="images/paper2.jpg" alt="VIB-TTS">
         <div class="paper-info">
           <h3>
-            <a href="#" target="_blank">
-              VIB-TTS: Making Emotion Text-to-Speech More Accurate via Variational Information Bottleneck and Emotion Dimension-Based Selection
-            </a>
+            VIB-TTS: Making Emotion Text-to-Speech More Accurate via Variational Information Bottleneck and Emotion Dimension-Based Selection
           </h3>
           <p class="authors">
             <span class="author-me">Ruobing Li</span><span class="co-first">#</span>, 
@@ -395,13 +405,11 @@
       <!-- ===== 合作论文（简洁列表） ===== -->
       <p class="pub-section-title">📎 Co-Authored Papers</p>
 
-      <!-- 论文 3: Echoes of the Brain -->
+      <!-- 论文 3: Echoes of the Brain（无链接） -->
       <div class="paper-simple">
         <div class="paper-info">
           <h3>
-            <a href="#" target="_blank">
-              Echoes of the Brain: Reconstructing Music from EEG via Latent Space Alignment and Guided Diffusion
-            </a>
+            Echoes of the Brain: Reconstructing Music from EEG via Latent Space Alignment and Guided Diffusion
           </h3>
           <p class="authors">
             Lin Shen, <span class="author-me">Ruobing Li</span>, Xiaoxi Liu, Haojie Zhang, 
@@ -418,7 +426,7 @@
       <div class="paper-simple">
         <div class="paper-info">
           <h3>
-            <a href="#" target="_blank">
+            <a href="https://www.isca-archive.org/interspeech_2024/ma24_interspeech.html#" target="_blank">
               E-ODN: An Emotion Open Deep Network for Generalised and Adaptive Speech Emotion Recognition
             </a>
           </h3>
@@ -437,7 +445,7 @@
       <div class="paper-simple">
         <div class="paper-info">
           <h3>
-            <a href="#" target="_blank">
+            <a href="https://ieeexplore.ieee.org/document/10949681" target="_blank">
               Enhancing Emotion Regulation in Mental Disorder Treatment: An AIGC-Based Closed-Loop Music Intervention System
             </a>
           </h3>
@@ -456,7 +464,7 @@
       <div class="paper-simple">
         <div class="paper-info">
           <h3>
-            <a href="#" target="_blank">
+            <a href="https://ieeexplore.ieee.org/document/10787256" target="_blank">
               A First Look at Generative Artificial Intelligence based Music Therapy for Mental Disorders
             </a>
           </h3>
@@ -526,32 +534,47 @@
       <h2>Links</h2>
       <div class="link-grid">
         
-        <a class="link-card" href="mailto:ruobing.li@bit.edu.cn">
+        <!-- Email（纯文本，不可点击） -->
+        <div class="link-card-static">
           <svg class="link-icon" viewBox="0 0 24 24" fill="#ea4335">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          <span>Email</span>
-        </a>
+          <div>
+            <span>Email</span><br>
+            <span class="email-text">ruobing.li@bit.edu.cn</span>
+          </div>
+        </div>
         
-        <a class="link-card" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
+        <!-- Google Scholar -->
+        <a class="link-card" href="https://scholar.google.com/citations?user=Or5VIWkAAAAJ&hl=zh-CN&oi=sra" target="_blank">
           <svg class="link-icon" viewBox="0 0 24 24" fill="#4285f4">
             <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
           </svg>
           <span>Google Scholar</span>
         </a>
         
-        <a class="link-card" href="https://www.researchgate.net/profile/Your-Profile" target="_blank">
+        <!-- ResearchGate -->
+        <a class="link-card" href="https://www.researchgate.net/profile/Ruobing-Li-10?ev=hdr_xprf" target="_blank">
           <svg class="link-icon" viewBox="0 0 24 24" fill="#00d0af">
             <path d="M19.586 0c-2.123 0-3.89 1.632-3.89 3.89 0 .378.056.742.147 1.093L12 7.762 8.157 4.983a3.89 3.89 0 1 0-4.27 6.5L12 17.5l8.113-6.017a3.89 3.89 0 0 0 3.473-3.593c0-2.258-1.767-3.89-3.89-3.89h-.11zM12 24l-6-4.5v-6L12 18l6-4.5v6z"/>
           </svg>
           <span>ResearchGate</span>
         </a>
-        
-        <a class="link-card" href="https://github.com/ruobingli" target="_blank">
-          <svg class="link-icon" viewBox="0 0 24 24" fill="#333">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+
+        <!-- BHE Lab -->
+        <a class="link-card" href="https://bhelaborg.wpcomstaging.com/" target="_blank">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#6366f1">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
           </svg>
-          <span>GitHub</span>
+          <span>BHE Lab</span>
+        </a>
+
+        <!-- BHE-AIM-IMT -->
+        <a class="link-card" href="https://bhe-aim-imt.github.io/" target="_blank">
+          <svg class="link-icon" viewBox="0 0 24 24" fill="#8b5cf6">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span>BHE-AIM-IMT</span>
         </a>
 
       </div>
@@ -561,7 +584,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; Ruobing Li. Last updated: February 2026.</p>
+    <p>&copy; 2025 Ruobing Li. Last updated: February 2026.</p>
   </footer>
 
 </body>
